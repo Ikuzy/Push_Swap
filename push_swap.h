@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 06:39:22 by ozouine           #+#    #+#             */
-/*   Updated: 2024/03/29 22:07:55 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/21 16:17:32 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_liste
 {
@@ -46,9 +47,13 @@ int		minimum(t_liste **stack);
 void	indexing(t_liste **stack);
 int		ft_lstsize(t_liste *lst);
 t_liste	*ft_lstlast(t_liste *lst);
+void	ft_lstadd_front(t_liste **lst, t_liste *new);
+void	ft_lstadd_back(t_liste **lst, t_liste *new);
 void	sorting_2(t_liste **stack);
 void	sorting_3(t_liste	**stack);
 void	sorting_4(t_liste **stackA, t_liste **stackB);
 void	sorting_5(t_liste **stackA, t_liste **stackB);
+int		ft_atoi(const char *nptr);
+
 
 #endif

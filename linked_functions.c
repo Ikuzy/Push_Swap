@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_functions.c                                 :+:      :+:    :+:   */
+/*   linked_functons.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 14:49:24 by ozouine           #+#    #+#             */
-/*   Updated: 2024/03/28 14:57:00 by ozouine          ###   ########.fr       */
+/*   Created: 2024/04/21 16:31:25 by ozouine           #+#    #+#             */
+/*   Updated: 2024/04/21 16:40:16 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,31 @@ t_liste	*ft_lstlast(t_liste *lst)
 		tmp = tmp->next;
 	}
 	return (tmp);
+}
+
+void	ft_lstadd_front(t_liste **lst, t_liste *new)
+{
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+}
+
+void	ft_lstadd_back(t_liste **lst, t_liste *new)
+{
+	t_liste	*tmp;
+
+	if (lst == NULL || new == NULL)
+		return ;
+	tmp = *lst;
+	if (tmp)
+	{
+		tmp = ft_lstlast(tmp);
+		tmp->next = new;
+	}
+	else
+		*lst = new;
 }
