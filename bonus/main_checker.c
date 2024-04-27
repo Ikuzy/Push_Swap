@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   main_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 07:38:50 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/27 17:26:46 by ozouine          ###   ########.fr       */
+/*   Created: 2024/04/27 17:29:35 by ozouine           #+#    #+#             */
+/*   Updated: 2024/04/27 17:30:07 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write (fd, &c, 1);
-}
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	i;
 
-	if (fd < 0)
-		return ;
-	i = 0;
-	while (s && s[i])
-		ft_putchar_fd(s[i++], fd);
-	ft_putchar_fd('\n', fd);
+{
+    
 }

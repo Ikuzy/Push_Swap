@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 06:39:22 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/27 19:48:47 by ozouine          ###   ########.fr       */
+/*   Created: 2024/04/27 16:43:31 by ozouine           #+#    #+#             */
+/*   Updated: 2024/04/27 17:42:12 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include <stddef.h>
 # include <unistd.h>
@@ -19,6 +19,12 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdlib.h>
+# include <fcntl.h>
+
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 typedef struct s_liste
 {
@@ -71,9 +77,15 @@ void	Push_to_a(t_liste **stackA, t_liste **stackB);
 int		get_idx_pst(t_liste *stack, int i);
 int		get_highest_pst(t_liste *stack, int i);
 void 	sorting(t_liste **stackA, t_liste **stackB);
-int 	processing(t_liste **stackA, char *join);
-void	free_stack(t_liste **stack);
-long	atoi_check(long result);
+void 	processing(t_liste **stackA, char *join);
+char	*get_next_line(int fd);
+char	*ft_strchr(const char *str, int c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		check_instructions(char *str, t_liste **stackA, t_liste **stackB);
+int		get_instructions(t_liste **stackA, t_liste **stackB);
 int		check_sort(t_liste **stackA);
+void	main_helper(t_liste *stackA, t_liste *stackB, int p);
+long	atoi_check(long result);
+
 
 #endif

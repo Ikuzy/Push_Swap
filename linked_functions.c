@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_functons.c                                  :+:      :+:    :+:   */
+/*   linked_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 16:31:25 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/21 16:40:16 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/25 17:37:10 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,12 @@ t_liste	*ft_lstlast(t_liste *lst)
 	return (tmp);
 }
 
-void	ft_lstadd_front(t_liste **lst, t_liste *new)
+void	fill_stack(t_liste **stack, int *tab, int p)
 {
-	if (*lst == NULL)
-		*lst = new;
-	else
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+	int i  = 0;
+	
+	while (p > i)
+		ft_lstadd_back(stack, ft_lstnew(tab[i++]));
 }
 
 void	ft_lstadd_back(t_liste **lst, t_liste *new)
@@ -62,4 +59,16 @@ void	ft_lstadd_back(t_liste **lst, t_liste *new)
 	}
 	else
 		*lst = new;
+}
+
+t_liste	*ft_lstnew(int content)
+{
+	t_liste	*node;
+
+	node = malloc(sizeof(t_liste));
+	if (!node)
+		return (NULL);
+	node->data = content;
+	node->next = NULL;
+	return (node);
 }

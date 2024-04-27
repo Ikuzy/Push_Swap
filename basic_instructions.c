@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 06:32:28 by ozouine           #+#    #+#             */
-/*   Updated: 2024/03/28 14:40:32 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/25 18:16:21 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	maximum(t_liste	**stack)
 	t_liste	*head;
 	int		max;
 
+	head = *stack;
 	max = head->data;
 	while (head)
 	{
@@ -32,6 +33,7 @@ int	minimum(t_liste **stack)
 	t_liste	*head;
 	int		min;
 
+	head = *stack;
 	min = head->data;
 	while (head)
 	{
@@ -40,18 +42,4 @@ int	minimum(t_liste **stack)
 		head = head->next;
 	}
 	return (min);
-}
-
-void	indexing(t_liste **stack)
-{
-	t_liste	*head;
-	int		i;
-
-	i = 0;
-	head = *stack;
-	while (head)
-	{
-		head->index = i++;
-		head = head->next;
-	}
 }

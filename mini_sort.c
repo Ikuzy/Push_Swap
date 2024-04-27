@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:01:14 by ozouine           #+#    #+#             */
-/*   Updated: 2024/03/29 22:07:42 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/26 22:22:53 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,16 @@ void	sorting_4(t_liste **stackA, t_liste **stackB)
 		min = min->next;
 		i++;
 	}
-	while (i-- > 0)
-		ra(stackA);
+	while ((*stackA)->data != minimum(stackA))
+	{
+		if (i < ft_lstsize(*stackA) / 2)
+			ra(stackA);
+		else
+			rra(stackA);
+	}
+	pb(stackA, stackB);
+	sorting_3(stackA);	
 	pa(stackA, stackB);
-
-	sorting_3(stackA);
-	pb(stackB, stackA);
 }
 
 void	sorting_5(t_liste **stackA, t_liste **stackB)
@@ -80,9 +84,14 @@ void	sorting_5(t_liste **stackA, t_liste **stackB)
 		min = min->next;
 		i++;
 	}
-	while (i-- > 0)
-		ra(stackA);
-	pa(stackA, stackB);
+	while ((*stackA)->data != minimum(stackA))
+	{
+		if (i < ft_lstsize(*stackA) / 2)
+			ra(stackA);
+		else
+			rra(stackA);
+	}
+	pb(stackA, stackB);
 	sorting_4(stackA, stackB);
-	pb(stackB, stackA);
+	pa(stackA, stackB);
 }
