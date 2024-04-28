@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 06:39:22 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/27 19:48:47 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/28 10:33:44 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdlib.h>
+
+typedef struct s_var
+{
+	char	*join;
+	int		i;
+	int		j;
+}	t_var;
 
 typedef struct s_liste
 {
@@ -75,5 +82,7 @@ int 	processing(t_liste **stackA, char *join);
 void	free_stack(t_liste **stack);
 long	atoi_check(long result);
 int		check_sort(t_liste **stackA);
+char	**ft_free(char **s, int j, int *tab);
+int 	white_space(char c);
 
 #endif

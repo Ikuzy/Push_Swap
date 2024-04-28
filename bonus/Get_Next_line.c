@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Get_Next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 16:19:37 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/27 16:20:10 by ozouine          ###   ########.fr       */
+/*   Created: 2024/04/28 10:37:39 by ozouine           #+#    #+#             */
+/*   Updated: 2024/04/28 11:47:55 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*buffer_reader(char *str, int fd)
 		if (read_bytes < 0)
 			return (free(buffer), free(str), NULL);
 		buffer[read_bytes] = '\0';
-		str = ft_strjoin(str, buffer);
+		str = ft_strjoin1(str, buffer);
 	}
 	return (free(buffer), str);
 }

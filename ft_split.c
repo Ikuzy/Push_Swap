@@ -6,23 +6,26 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:41:01 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/23 15:38:24 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/28 10:34:18 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	**ft_free(char **s, int j)
+char	**ft_free(char **s, int j, int	*tab)
 {
 	int	i;
 
 	i = 0;
+	if (!s || !tab)
+		return (NULL);
 	while (i < j)
 	{
 		free(s[i]);
 		i++;
 	}
 	free(s);
+	free(tab);
 	return (NULL);
 }
 
@@ -77,7 +80,7 @@ char	**sub_split(char const *s, char c, char **strs)
 		{
 			strs[i] = alloc_w((char *)s, c);
 			if (strs[i] == NULL)
-				return (ft_free(strs, i));
+				return (ft_free(strs, i, 0));
 			i++;
 			while (*s && *s != c)
 				s++;

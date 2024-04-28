@@ -6,7 +6,7 @@
 #    By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 15:13:20 by ozouine           #+#    #+#              #
-#    Updated: 2024/04/27 17:29:43 by ozouine          ###   ########.fr        #
+#    Updated: 2024/04/28 11:33:46 by ozouine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,11 @@ SRCS = ft_split.c push.c rotation.c utils.c basic_instructions.c\
 		reverse_rotation.c swap.c Push_Swap.c errors.c algo.c\
 		final_fct.c\
 		
-BSRC = ft_split.c push.c rotation.c utils.c basic_instructions.c\
+BSRC = ft_split.c bonus/push_bonus.c bonus/rotation_bonus.c utils.c basic_instructions.c\
 		linked_functions.c strjoin.c ft_putstr_fd.c mini_sort.c\
-		reverse_rotation.c swap.c Push_Swap.c errors.c algo.c\
-		final_fct.c bonus_utils.c checker.c main_checker.c\
+		bonus/reverse_rotation_bonus.c bonus/swap_bonus.c errors.c algo.c final_fct.c\
+		bonus/bonus_help.c bonus/bonus_utils.c bonus/checker.c\
+		bonus/get_next_line.c\
 
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRC:.c=.o)
@@ -34,8 +35,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-$(BNAME):$(BOBJ)
-	$(CC) $(CFLAGS) $(BSRC) -o $(BNAME)
+$(BNAME): $(BOBJS)
+	$(CC) $(CFLAGS) $(BOBJS) -o $(BNAME)
 
 bonus: $(BNAME)
 

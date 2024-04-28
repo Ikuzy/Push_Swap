@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 22:45:53 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/27 19:47:38 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/28 12:05:15 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,17 @@ int processing(t_liste **stackA, char *join)
     tab = (int *)malloc(sizeof(int) * i);   
     while (s < i)
     {
+        if (ft_atoi(split[s]) == 2147483648)
+            return (ft_putstr_fd("error", 2), exit(1), 1);
         tab[s] = ft_atoi(split[s]);
         s++;
     }
     if(check_double(tab, i) == 1)
-        (ft_putstr_fd("error", 1), exit(1));
+        return (ft_putstr_fd("error", 1), exit(1), 1);
 	fill_stack(stackA, tab, i);
 	tab = sort_tab(tab, i);
 	indexing(stackA, tab, i);
+    ft_free(split, i, tab);
     if (check_sort(stackA) == 1)
         return (1);
     return(0);

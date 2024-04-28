@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:41:29 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/25 17:13:37 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/28 11:48:58 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,26 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (NULL);
 	ft_strlcpy(result, s1, ft_strlen(s1) + 1);
     ft_strlcat(result, " ", ft_strlen(s1) + 2);
+	ft_strlcat(result, s2, i);
+	return (result);
+}
+
+char	*ft_strjoin1(char *s1, char *s2)
+{
+	size_t	i;
+	char	*result;
+
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
+	i = ft_strlen(s1) + ft_strlen(s2) + 1;
+	result = (char *)malloc(sizeof(char) * i);
+	if (!result)
+		return (NULL);
+	ft_strlcpy(result, s1, ft_strlen(s1) + 1);
 	ft_strlcat(result, s2, i);
 	return (result);
 }
