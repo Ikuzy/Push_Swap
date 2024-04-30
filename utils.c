@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:58:08 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/27 17:41:11 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/30 18:41:36 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_atoi(char *nptr)
 {
-	int					i;
-	int					sign;
+	int		i;
+	int		sign;
 	long	nb;
 
 	i = 0;
@@ -46,7 +46,7 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-int ft_strslen(char **str)
+int	ft_strslen(char **str)
 {
 	int	i;
 
@@ -92,11 +92,10 @@ void	indexing(t_liste **stack, int *tab, int p)
 		tmp = *stack;
 		while (tmp)
 		{
-			if(tmp->data == tab[i])
+			if (tmp->data == tab[i])
 				tmp->index = i;
 			tmp = tmp->next;
 		}
 		i++;
 	}
-	
 }

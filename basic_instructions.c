@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 06:32:28 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/25 18:16:21 by ozouine          ###   ########.fr       */
+/*   Created: 2024/04/30 18:25:24 by ozouine           #+#    #+#             */
+/*   Updated: 2024/04/30 18:25:27 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	maximum(t_liste	**stack)
+int	maximum(t_liste **stack)
 {
 	t_liste	*head;
 	int		max;

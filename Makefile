@@ -6,7 +6,7 @@
 #    By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 15:13:20 by ozouine           #+#    #+#              #
-#    Updated: 2024/04/28 11:33:46 by ozouine          ###   ########.fr        #
+#    Updated: 2024/04/29 22:13:10 by ozouine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 BNAME = checker
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_split.c push.c rotation.c utils.c basic_instructions.c\
 		linked_functions.c strjoin.c ft_putstr_fd.c mini_sort.c\

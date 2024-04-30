@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:41:29 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/28 11:48:58 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/29 21:21:14 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,23 @@ static size_t	ft_strlcpy(char *dst, char *src, size_t size)
 	return (ft_strlen(src));
 }
 
-static char    *ft_strdup(char *s)
+static char	*ft_strdup(char *s)
 {
-    char    *dup;
-    size_t    i;
+	char	*dup;
+	size_t	i;
 
-    i = ft_strlen(s);
-    dup = malloc(sizeof(char) * i + 1);
-    if (!dup)
-        return (NULL);
-    i = 0;
-    while (s[i])
-    {
-        dup[i] = s[i];
-        i++;
-    }
-    dup[i] = '\0';
-    return (dup);
+	i = ft_strlen(s);
+	dup = malloc(sizeof(char) * i + 1);
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -84,7 +84,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!result)
 		return (NULL);
 	ft_strlcpy(result, s1, ft_strlen(s1) + 1);
-    ft_strlcat(result, " ", ft_strlen(s1) + 2);
+	ft_strlcat(result, " ", ft_strlen(s1) + 2);
 	ft_strlcat(result, s2, i);
 	return (result);
 }

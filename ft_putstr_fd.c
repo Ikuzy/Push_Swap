@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 07:38:50 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/27 17:26:46 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/30 18:36:57 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write (fd, &c, 1);
+	write(fd, &c, 1);
 }
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;

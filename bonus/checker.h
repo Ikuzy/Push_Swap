@@ -16,19 +16,18 @@
 # include "../push_swap.h"
 # include <fcntl.h>
 
-
-# ifndef  BUFFER_SIZE
+# ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
 
 char	*get_next_line(int fd);
 char	*ft_strchr(char *s, int c);
-int	    ft_strncmp(char *s1, char *s2, size_t n);
-int 	ft_strcmp(char *str1, char *str2);
-int	    check_input(char *str, t_liste **stackA, t_liste **stackB);
-int 	get_input(t_liste **stackA, t_liste **stackB);
+int		ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strcmp(char *str1, char *str2);
+int		check_input(char *str, t_liste **stackA, t_liste **stackB);
+int		get_input(t_liste **stackA, t_liste **stackB);
 void	main_helper(t_liste **stackA, t_liste **stackB);
 char	*ft_strjoin1(char *s1, char *s2);
-int	    check_sort1(t_liste **stackA);
+int		check_sort1(t_liste **stackA);
 
-# endif
+#endif

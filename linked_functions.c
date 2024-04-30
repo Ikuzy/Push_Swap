@@ -39,8 +39,9 @@ t_liste	*ft_lstlast(t_liste *lst)
 
 void	fill_stack(t_liste **stack, int *tab, int p)
 {
-	int i  = 0;
-	
+	int	i;
+
+	i = 0;
 	while (p > i)
 		ft_lstadd_back(stack, ft_lstnew(tab[i++]));
 }

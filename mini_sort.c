@@ -21,7 +21,7 @@ void	sorting_2(t_liste **stack)
 		sa(stack);
 }
 
-void	sorting_3(t_liste	**stack)
+void	sorting_3(t_liste **stack)
 {
 	t_liste	*last;
 	t_liste	*first;
@@ -68,7 +68,7 @@ void	sorting_4(t_liste **stackA, t_liste **stackB)
 			rra(stackA);
 	}
 	pb(stackA, stackB);
-	sorting_3(stackA);	
+	sorting_3(stackA);
 	pa(stackA, stackB);
 }
 

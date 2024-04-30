@@ -15,6 +15,7 @@
 int	check_sort1(t_liste **stackA)
 {
 	t_liste	*tmp;
+
 	tmp = *stackA;
 	while (tmp && tmp->next)
 	{

@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 10:59:05 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/28 12:22:31 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/30 18:42:00 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	check_input(char *str, t_liste **stackA, t_liste **stackB)
 	else if (!ft_strcmp(str, "rrr\n"))
 		return (rrr(stackA, stackB), 0);
 	else
-		return (1); 
+		return (1);
 }
 
 int	get_input(t_liste **stackA, t_liste **stackB)
@@ -51,8 +51,7 @@ int	get_input(t_liste **stackA, t_liste **stackB)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);
-		return (free_stack(stackA), free_stack(stackB),
-			exit(1), 0);
+		return (free_stack(stackA), free_stack(stackB), exit(0), 0);
 	}
 	while (temp != NULL)
 	{
@@ -69,12 +68,12 @@ int	get_input(t_liste **stackA, t_liste **stackB)
 void	main_helper(t_liste **stackA, t_liste **stackB)
 {
 	if (!get_input(stackA, stackB))
-		return (write(2, "Error\n", 7), free_stack(stackA),
-			free_stack(stackB), exit(EXIT_FAILURE));
+		return (write(2, "Error\n", 7), free_stack(stackA), free_stack(stackB),
+			exit(1));
 	if (check_sort1(stackA) && ft_lstsize(*stackB) == 0)
-		ft_putstr_fd("OK\n", 1);
+		ft_putstr_fd("OK", 1);
 	else
-		ft_putstr_fd("KO\n", 1);
+		ft_putstr_fd("KO", 1);
 	free_stack(stackA);
 	if (stackB != NULL)
 		free_stack(stackB);
