@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 22:45:53 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/30 14:08:29 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/05/06 11:06:06 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ void	sorting(t_liste **stackA, t_liste **stackB)
 	else if (ft_lstsize(*stackA) > 5)
 	{
 		if (ft_lstsize(*stackA) < 250)
-			Push_to_b(stackA, stackB, 15);
+			push_to_b(stackA, stackB, 15);
 		else
-			Push_to_b(stackA, stackB, 40);
+			push_to_b(stackA, stackB, 40);
 	}
 }

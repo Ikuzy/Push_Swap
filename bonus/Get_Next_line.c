@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 10:37:39 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/30 18:44:40 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/05/06 09:24:12 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*buffer_reader(char *str, int fd)
 {
 	ssize_t	read_bytes;
 	char	*buffer;
+	char	*tmp;
 
 	if (!str)
 	{
@@ -32,7 +33,9 @@ char	*buffer_reader(char *str, int fd)
 		if (read_bytes < 0)
 			return (free(buffer), free(str), NULL);
 		buffer[read_bytes] = '\0';
+		tmp = str;
 		str = ft_strjoin1(str, buffer);
+		free(tmp);
 	}
 	return (free(buffer), str);
 }

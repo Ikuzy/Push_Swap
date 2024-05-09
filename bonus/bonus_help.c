@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 10:59:05 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/30 18:42:00 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/05/06 09:33:22 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	get_input(t_liste **stackA, t_liste **stackB)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);
-		return (free_stack(stackA), free_stack(stackB), exit(0), 0);
+		return (free_stack(stackA), free_stack(stackB), free(temp), exit(0), 0);
 	}
 	while (temp != NULL)
 	{
@@ -68,7 +68,7 @@ int	get_input(t_liste **stackA, t_liste **stackB)
 void	main_helper(t_liste **stackA, t_liste **stackB)
 {
 	if (!get_input(stackA, stackB))
-		return (write(2, "Error\n", 7), free_stack(stackA), free_stack(stackB),
+		return (write(2, "Error\n", 6), free_stack(stackA), free_stack(stackB),
 			exit(1));
 	if (check_sort1(stackA) && ft_lstsize(*stackB) == 0)
 		ft_putstr_fd("OK", 1);

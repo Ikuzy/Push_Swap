@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 10:26:47 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/30 18:44:15 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/05/08 16:36:18 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 int	main(int ac, char **av)
 {
-	t_var	variable;
+	t_var	v;
 
 	if (ac > 1)
 	{
-		variable.stacka = NULL;
-		variable.stackb = NULL;
-		variable.i = 1;
-		variable.j = 1;
-		variable.join = NULL;
-		while (variable.i < ac)
+		v.stacka = NULL;
+		v.stackb = NULL;
+		v.i = 1;
+		v.j = 1;
+		v.join = NULL;
+		while (v.i < ac)
 		{
-			if (check_digits(av[variable.i]) == 1
-				|| check_spaces(av[variable.i]) == 1)
+			if (check_digits(av[v.i]) == 1 || check_spaces(av[v.i]) == 1)
 				return (ft_putstr_fd("Error", 1), 1);
-			variable.i++;
+			v.i++;
 		}
-		while (variable.j < ac)
+		while (v.j < ac)
 		{
-			variable.str = variable.join;
-			variable.join = ft_strjoin(variable.join, av[variable.j++]);
-			free(variable.str);
+			v.str = v.join;
+			v.join = ft_strjoin(v.join, av[v.j++]);
+			free(v.str);
 		}
-		processing(&variable.stacka, variable.join);
-		main_helper(&variable.stacka, &variable.stackb);
+		processing(&v.stacka, v.join);
+		main_helper(&v.stacka, &v.stackb);
 	}
 }

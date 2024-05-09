@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:24:10 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/30 18:35:03 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/04/30 18:53:20 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	push_to_b(t_liste **stackA, t_liste **stackB, int p)
 		else
 			rra(stackA);
 	}
-	Push_to_a(stackA, stackB);
+	push_to_a(stackA, stackB);
 }
 
 void	push_to_a(t_liste **stackA, t_liste **stackB)

@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:58:08 by ozouine           #+#    #+#             */
-/*   Updated: 2024/04/30 18:41:36 by ozouine          ###   ########.fr       */
+/*   Updated: 2024/05/01 20:32:20 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long	ft_atoi(char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 		nb = (nb * 10) + (nptr[i++] - 48);
-	if (atoi_check(nb) || ft_strlen(nptr) > 12)
+	if (atoi_check(nb))
 		return (2147483648);
 	return (nb * sign);
 }
